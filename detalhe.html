@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Histórica — Arquivo Clássico</title>
+    <!-- Tipografia Editorial (Lora, DM Sans e IBM Plex Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Lora:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 e Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Barra Superior de Navegação -->
+    <nav class="barra-navegacao py-3 mb-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="link-voltar texto-mono small">
+                <i class="bi bi-arrow-left me-2"></i>VOLTAR AO ÍNDICE
+            </a>
+            <span class="titulo-serif fw-bold">Arquivo Clássico</span>
+        </div>
+    </nav>
+
+    <main class="container mb-5">
+        <!-- Indicador de Carregamento -->
+        <div id="estado-carregamento-detalhe" class="text-center my-5 py-5">
+            <div class="spinner-border text-dark" role="status"></div>
+            <p class="mt-3 texto-mono small texto-secundario">A ABRIR DOSSIER DO MODELO...</p>
+        </div>
+
+        <!-- Ficha Documental do Veículo -->
+        <article id="conteudo-veiculo" class="d-none">
+            <div class="row g-5">
+                <!-- Coluna Lateral: Fotografia e Ficha de Arquivo -->
+                <div class="col-lg-5">
+                    <div class="ficha-lateral p-3 p-md-4 sticky-lg-top" style="top: 1.5rem;">
+                        <figure class="mb-3">
+                            <img id="detalhe-imagem" src="" alt="" class="img-fluid w-100 imagem-detalhe">
+                        </figure>
+
+                        <div class="lista-especificacoes mb-4">
+                            <div class="linha-spec d-flex justify-content-between py-2">
+                                <span class="texto-mono small texto-secundario">CATEGORIA</span>
+                                <span id="detalhe-categoria" class="badge"></span>
+                            </div>
+                            <div class="linha-spec d-flex justify-content-between py-2">
+                                <span class="texto-mono small texto-secundario">ÉPOCA</span>
+                                <span id="detalhe-decada" class="texto-mono small fw-medium"></span>
+                            </div>
+                            <div class="linha-spec d-flex justify-content-between py-2">
+                                <span class="texto-mono small texto-secundario">ORIGEM</span>
+                                <span id="detalhe-pais" class="texto-mono small fw-medium"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button id="btn-favorito-detalhe" class="btn btn-garagem">
+                                <i class="bi bi-bookmark me-2"></i>Guardar na Garagem
+                            </button>
+                            <a id="detalhe-link-wiki" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-limpar btn-sm py-2">
+                                Consultar artigo original na Wikipédia <i class="bi bi-arrow-up-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Principal: Artigo Editorial -->
+                <div class="col-lg-7">
+                    <header class="cabecalho-artigo pb-4 mb-4">
+                        <p id="detalhe-subtitulo" class="texto-mono small texto-terracota text-uppercase mb-2"></p>
+                        <h1 id="detalhe-titulo" class="display-5 titulo-serif mb-0"></h1>
+                    </header>
+
+                    <div id="detalhe-texto-historico" class="texto-artigo">
+                        <!-- Texto formatado pelo JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="rodape-editorial py-4 mt-auto">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <span class="texto-mono small">ARQUIVO CLÁSSICO • PROJETO TDW • RUI PIMENTA 142545</span>
+            <span class="small texto-secundario">Fontes documentais e fotográficas obtidas via Wikipedia API</span>
+        </div>
+    </footer>
+
+    <script src="js/dados.js"></script>
+    <script src="js/detalhe.js"></script>
+</body>
+</html>

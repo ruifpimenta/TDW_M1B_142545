@@ -1,0 +1,282 @@
+:root {
+    --papel-fundo: #f4f1ea;
+    --papel-cartao: #faf8f3;
+    --papel-escuro: #eae5d9;
+    --tinta-principal: #1b1a18;
+    --tinta-secundaria: #5c5850;
+    --borda-linha: #d2cbbd;
+    --terracota: #b54434;
+    --verde-racing: #1f4e3d;
+    --azul-cobalto: #26466d;
+    --latao: #b88224;
+}
+
+body {
+    background-color: var(--papel-fundo);
+    color: var(--tinta-principal);
+    font-family: "DM Sans", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tipografia */
+.titulo-serif {
+    font-family: "Lora", serif;
+    color: var(--tinta-principal);
+    letter-spacing: -0.02em;
+}
+
+.texto-mono {
+    font-family: "IBM Plex Mono", monospace;
+    letter-spacing: 0.04em;
+}
+
+.texto-secundario {
+    color: var(--tinta-secundaria);
+}
+
+.texto-terracota {
+    color: var(--terracota);
+}
+
+/* Barra superior e cabeçalho editorial */
+.barra-topo {
+    background-color: var(--tinta-principal);
+    color: var(--papel-fundo);
+}
+
+.cabecalho-editorial {
+    border-bottom: 2px solid var(--tinta-principal);
+}
+
+.barra-navegacao {
+    background-color: var(--papel-cartao);
+    border-bottom: 1px solid var(--borda-linha);
+}
+
+.link-voltar {
+    color: var(--tinta-principal);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-voltar:hover {
+    color: var(--terracota);
+}
+
+/* Painel de filtros */
+.barra-filtros {
+    background-color: var(--papel-cartao);
+    border: 1px solid var(--borda-linha);
+    border-radius: 3px;
+}
+
+.campo-editorial {
+    background-color: #ffffff;
+    border: 1px solid var(--borda-linha);
+    border-radius: 2px;
+    color: var(--tinta-principal);
+    font-size: 0.95rem;
+}
+
+.campo-editorial:focus {
+    border-color: var(--tinta-principal);
+    box-shadow: none;
+}
+
+/* Botões */
+.btn-garagem {
+    background-color: transparent;
+    color: var(--tinta-principal);
+    border: 1px solid var(--tinta-principal);
+    border-radius: 2px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-garagem:hover,
+.btn-garagem.ativo {
+    background-color: var(--tinta-principal);
+    color: var(--papel-fundo);
+}
+
+.btn-limpar {
+    background-color: var(--papel-escuro);
+    color: var(--tinta-principal);
+    border: 1px solid var(--borda-linha);
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+.btn-limpar:hover {
+    background-color: #dfd8c8;
+    color: var(--tinta-principal);
+}
+
+/* Cartões do Catálogo (Estilo Ficha de Arquivo) */
+.cartao-carro {
+    background-color: var(--papel-cartao);
+    border: 1px solid var(--borda-linha);
+    border-radius: 3px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.cartao-carro:hover {
+    border-color: var(--tinta-principal);
+    background-color: #ffffff;
+}
+
+.contentor-imagem {
+    position: relative;
+    border-bottom: 1px solid var(--borda-linha);
+    overflow: hidden;
+    background-color: var(--papel-escuro);
+}
+
+.cartao-imagem {
+    height: 215px;
+    width: 100%;
+    object-fit: cover;
+    filter: contrast(1.03) saturate(0.95);
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.cartao-carro:hover .cartao-imagem {
+    transform: scale(1.02);
+    filter: contrast(1.05) saturate(1.05);
+}
+
+.btn-favorito {
+    background-color: var(--papel-cartao);
+    color: var(--tinta-principal);
+    border: 1px solid var(--borda-linha);
+    border-radius: 2px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-favorito:hover {
+    border-color: var(--tinta-principal);
+    background-color: #ffffff;
+}
+
+.btn-favorito.guardado {
+    background-color: var(--tinta-principal);
+    color: #f4c465;
+    border-color: var(--tinta-principal);
+}
+
+.titulo-cartao {
+    font-family: "Lora", serif;
+    font-weight: 700;
+    color: var(--tinta-principal);
+    font-size: 1.25rem;
+}
+
+/* Limita o resumo nos cartões a 3 linhas */
+.resumo-curto {
+    color: var(--tinta-secundaria);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.rodape-cartao {
+    border-top: 1px solid var(--borda-linha);
+    padding-top: 0.85rem;
+}
+
+.link-ficha {
+    color: var(--tinta-principal);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.link-ficha:hover {
+    color: var(--terracota);
+}
+
+/* Etiquetas de Categoria (Tons Vintage) */
+.badge {
+    border-radius: 2px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    padding: 0.4em 0.65em;
+}
+
+.badge-rali {
+    background-color: var(--terracota);
+    color: #ffffff;
+}
+
+.badge-jdm {
+    background-color: var(--azul-cobalto);
+    color: #ffffff;
+}
+
+.badge-europeu {
+    background-color: var(--verde-racing);
+    color: #ffffff;
+}
+
+.badge-supercarro {
+    background-color: var(--latao);
+    color: #ffffff;
+}
+
+/* Página de Detalhe */
+.ficha-lateral {
+    background-color: var(--papel-cartao);
+    border: 1px solid var(--borda-linha);
+    border-radius: 3px;
+}
+
+.imagem-detalhe {
+    max-height: 320px;
+    object-fit: cover;
+    border: 1px solid var(--borda-linha);
+}
+
+.linha-spec {
+    border-bottom: 1px solid var(--borda-linha);
+}
+
+.cabecalho-artigo {
+    border-bottom: 2px solid var(--tinta-principal);
+}
+
+.texto-artigo p {
+    color: #2b2926;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+.texto-artigo h5 {
+    font-family: "Lora", serif;
+    color: var(--tinta-principal);
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--borda-linha);
+}
+
+/* Rodapé */
+.rodape-editorial {
+    background-color: var(--papel-escuro);
+    border-top: 1px solid var(--borda-linha);
+}
